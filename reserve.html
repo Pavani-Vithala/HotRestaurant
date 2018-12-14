@@ -84,4 +84,30 @@
       </p>
     </footer>
   </body>
+  <script type="text/javascript">
+    //reservation
+    $("#submit").on("click", function(event) {
+      event.preventDefault();
+      var newClient = {
+        name: $("#name")
+          .val()
+          .trim(),
+        phoneNumber: $("#number")
+          .val()
+          .trim(),
+        email: $("#email")
+          .val()
+          .trim(),
+        id: $("#idnumber")
+          .val()
+          .trim()
+      };
+
+      // Question: What does this code do??
+      $.post("/reserve", newClient).then(function(data) {
+        console.log("reserve.html", data);
+        alert("Adding client...");
+      });
+    });
+  </script>
 </html>
