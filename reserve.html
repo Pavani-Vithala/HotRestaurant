@@ -20,30 +20,34 @@
   </head>
   <body>
     <div class="container">
-      <hr />
-      <form role="form" id="survey">
-        <h1>Table reservation</h1>
-        <div class="form-group">
-          <label for="usr">Name: </label>
-          <input type="text" class="form-control" id="name" />
+      <div class="jumbotron">
+        <h1 class="text-center">Hot Restaurant</h1>
+        <hr />
+        <h2 class="text-center">Book a seat before they are all taken</h2>
+        <div class="text-center">
+          <a
+            ><button type="button" class="btn btn-lg btn-info btn-primary">
+              View tables!
+            </button></a
+          >
+          <a class="text-center"
+            ><button
+              id="add-btn"
+              type="button"
+              class="btn btn-lg btn-info btn-danger"
+            >
+              Make a reservation!
+            </button></a
+          >
         </div>
-        <div class="form-group">
-          <label for="usr">Phone Number: </label>
-          <input type="text" class="form-control" id="number" />
-        </div>
-        <div class="form-group">
-          <label for="usr">Email: </label>
-          <input type="text" class="form-control" id="email" />
-        </div>
-        <div class="form-group">
-          <label for="usr">Unique ID: </label>
-          <input type="text" class="form-control" id="number" />
-        </div>
-
-        <button type="button" class="btn btn-success btn-block" id="submit">
-          Submit
-        </button>
-      </form>
+      </div>
     </div>
+    <footer>
+      <p>
+        <a href="#">Clear Tables</a> |
+        <a href="/api/tables">API Table Link</a> |
+        <a href="/api/waitlist">API Wait List</a>
+      </p>
+    </footer>
   </body>
 </html>
