@@ -21,6 +21,29 @@
   </head>
   <body>
     <div class="container">
+      <div class="jumbotron">
+        <h1 class="text-center">Hot Restaurant</h1>
+        <hr />
+        <h2 class="text-center">Book a seat before they are all taken</h2>
+        <div class="text-center">
+          <a
+            ><button type="button" class="btn btn-lg btn-info btn-primary">
+              View tables!
+            </button></a
+          >
+          <a class="text-center"
+            ><button
+              id="add-btn"
+              type="button"
+              class="btn btn-lg btn-info btn-danger"
+            >
+              Make a reservation!
+            </button></a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="container">
       <div class="card"></div>
       <form role="form" id="survey">
         <h1>Table reservation</h1>
@@ -48,7 +71,7 @@
     </div>
     <footer>
       <p>
-        <a href="/api/tables">API Table Link</a> " | "
+        <a href="/api/tables">API Table Link</a> |
         <a href="/api/waitlist">API Wait List</a>
       </p>
     </footer>
