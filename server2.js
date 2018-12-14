@@ -77,7 +77,7 @@ app.post("/reserve", function (req, res) {
     // Using a RegEx Pattern to remove spaces from newCharacter
     // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
 
-    if (clients.length < 6) {
+    if (clients.length < 5) {
         newReservation.Name = newReservation.name.replace(/\s+/g, "").toLowerCase();
 
         console.log(newReservation);

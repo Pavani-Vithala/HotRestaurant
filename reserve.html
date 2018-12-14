@@ -23,7 +23,7 @@
       integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    
   </head>
   <body>
     <div class="container">
@@ -85,3 +85,28 @@
     </footer>
   </body>
 </html>
+<script>
+$("#submit").on("click", function(event) {
+     event.preventDefault();
+     var newClient = {
+       name: $("#name")
+         .val()
+         .trim(),
+       phoneNumber: $("#number")
+         .val()
+         .trim(),
+       email: $("#email")
+         .val()
+         .trim(),
+       id: $("#idnumber")
+         .val()
+         .trim()
+     };
+
+     // Question: What does this code do??
+     $.post("/reserve", newClient).then(function(data) {
+       console.log("reserve.html", data);
+       alert("Adding client...");
+     });
+   });
+</script>
