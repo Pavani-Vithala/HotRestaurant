@@ -16,26 +16,23 @@ app.use(express.json());
 // =============================================================
 var clients = [
     {
-
         name: "Adam",
         phoneNumber: 437567772,
         email: "adam@gmail.com",
-        id: 1,
+        id: 1
     },
 
     {
-
         name: "Sophie",
         phoneNumber: 437987123,
         email: "sophie@gmail.com",
-        id: 2,
+        id: 2
     },
     {
-
         name: "Sam",
         phoneNumber: 437233432,
         email: "sam@gmail.com",
-        id: 3,
+        id: 3
     }
 ];
 
@@ -47,26 +44,24 @@ app.get("/", function (req, res) {
 });
 
 app.get("/tables", function (req, res) {
+    console.log("hello");
     res.sendFile(path.join(__dirname, "tables.html"));
 });
 app.get("/reserve", function (req, res) {
-    res.sendFile(path.join(__dirname, "reserve.html"))
+    res.sendFile(path.join(__dirname, "reserve.html"));
 });
-
-
 
 //To display the details of all the tables
 
 app.get("/api/tables", function (req, res) {
     return res.json(clients);
-})
-
+});
 
 //To display the details of all waitlist tables
 
 app.get("/api/waitlist", function (req, res) {
     return res.json(waitingList);
-})
+});
 // To post the table details when a reservation is made
 
 app.post("/reserve", function (req, res) {
@@ -74,11 +69,14 @@ app.post("/reserve", function (req, res) {
     // This works because of our body parsing middleware
     var newReservation = req.body;
 
+    newReservation.Name = newReservation.name.replace(/\s+/g, "").toLowerCase();
+
     // Using a RegEx Pattern to remove spaces from newCharacter
     // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
 
-    if (clients.length < 5) {
-        newReservation.Name = newReservation.name.replace(/\s+/g, "").toLowerCase();
+
+    if (clients.length < 6) {
+        //newReservation.Name = newReservation.name.replace(/\s+/g, "").toLowerCase();
 
         console.log(newReservation);
 
@@ -88,7 +86,6 @@ app.post("/reserve", function (req, res) {
     } else {
         waitingList.push(newReservation);
     }
-
 });
 
 //To listen to the local port
